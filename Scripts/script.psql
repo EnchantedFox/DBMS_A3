@@ -1,0 +1,18 @@
+DROP TABLE STUDENTS;
+DROP SEQUENCE STUDENT_ID_SEQ;
+
+CREATE SEQUENCE STUDENT_ID_SEQ START 1;
+
+CREATE TABLE STUDENTS (
+    STUDENT_ID INT PRIMARY KEY DEFAULT NEXTVAL('STUDENT_ID_SEQ'),
+    FIRST_NAME TEXT NOT NULL,
+    LAST_NAME TEXT NOT NULL,
+    EMAIL TEXT UNIQUE NOT NULL,
+    ENROLLMENT_DATE DATE
+);
+
+
+INSERT INTO students (first_name, last_name, email, enrollment_date) VALUES
+('John', 'Doe', 'john.doe@example.com', '2023-09-01'),
+('Jane', 'Smith', 'jane.smith@example.com', '2023-09-01'),
+('Jim', 'Beam', 'jim.beam@example.com', '2023-09-02');
